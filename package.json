@@ -2,12 +2,16 @@
   "name": "node-es6-boilerplate",
   "version": "1.0.0",
   "description": "Node application boilerplate setup with es6",
-  "main": "index.js",
+  "main": "lib/index.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "start": "nodemon --exec babel-node -- index.js"
+    "build": "babel src -d lib",
+    "prestart": "npm run build",
+    "start": "node lib/index.js",
+    "test": "jest --watchAll",
+    "dev": "nodemon --exec babel-node -- index.js"
   },
   "repository": {
     "type": "git",
@@ -21,7 +25,9 @@
   "homepage": "https://github.com/amzubair/node-es6#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "nodemon": "^1.12.0"
+    "babel-jest": "^22.4.1",
+    "babel-preset-env": "^1.6.1",
+    "jest": "^22.4.2",
+    "nodemon": "^1.17.1"
   }
 }
