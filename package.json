@@ -29,5 +29,8 @@
     "babel-preset-env": "^1.6.1",
     "jest": "^22.4.2",
     "nodemon": "^1.17.1"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": ["lib"]
   }
 }
